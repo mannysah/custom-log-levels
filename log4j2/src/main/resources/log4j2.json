@@ -1,0 +1,50 @@
+{
+  "configuration": {
+    "name": "Default",
+    "properties": {
+      "property": [
+        {
+          "name": "log-path",
+          "value": "logs"
+        },
+        {
+          "name": "archive",
+          "value": "${log-path}/archive"
+        }
+      ]
+    },
+    "customLevels" : {
+      "CustomLevel" : {
+        "name": "TEST",
+        "intLevel" : "210"
+      }
+    },
+    "appenders": {
+      "Console": {
+        "name": "Console-Appender",
+        "target": "SYSTEM_OUT",
+        "PatternLayout": {
+          "pattern": "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+        }
+      },
+      "File": {
+        "name": "File-Appender",
+        "fileName": "${log-path}/logfile.log",
+        "PatternLayout": {
+          "pattern": "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+        }
+      }
+    },
+    "loggers": {
+      "logger": {
+        "name": "com.mannietest.customloglevellog4j2.customloglevel",
+        "level": "TEST",
+        "appender-ref": [{"ref": "File-Appender", "level":"error"}]
+      },
+      "root": {
+        "level": "debug",
+        "appender-ref": {"ref": "Console-Appender"}
+      }
+    }
+  }
+}
