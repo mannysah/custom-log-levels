@@ -1,0 +1,14 @@
+package com.key.customloglevellogj12.customlevellog4j12;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
+public class FunnyLogging {
+	
+	public void testLogging()
+	{
+        Logger logger = Logger.getLogger(FunnyLogging.class);
+        logger.log(FunnyLogLevel.FUNNY, "I am a Funny log");
+        logger.log(Level.DEBUG, "I am a DEBUG message");		
+	}
+}
