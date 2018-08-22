@@ -1,4 +1,4 @@
-package com.key.customloglevellogj12.customlevellog4j12;
+package com.mannietest.customloglevellogj12.customlevel;
 
 import org.apache.log4j.Level;
 
