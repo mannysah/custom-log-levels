@@ -15,8 +15,8 @@
     },
     "customLevels" : {
       "CustomLevel" : {
-        "name": "TEST",
-        "intLevel" : "210"
+        "name": "ShowMeOnError",
+        "intLevel" : "190"
       }
     },
     "appenders": {
@@ -38,7 +38,7 @@
     "loggers": {
       "logger": {
         "name": "com.mannietest.customloglevellog4j2.customloglevel",
-        "level": "TEST",
+        "level": "error",
         "appender-ref": [{"ref": "File-Appender", "level":"error"}]
       },
       "root": {

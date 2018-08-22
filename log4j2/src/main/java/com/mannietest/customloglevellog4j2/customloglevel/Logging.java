@@ -15,6 +15,6 @@ public class Logging {
         logger.error("This is an error message");
         logger.fatal("This is a fatal message");
         
-        logger.log(Level.getLevel("TEST"), "a TEST message");
+        logger.log(Level.getLevel("ShowMeOnError"), "a ShowMeOnError Custom Level message");
     }
 }
