@@ -12,6 +12,7 @@
 
 **Then** developers needs to create custom log level for the application 
 
+
 In production, typically we use the logging level of ERROR or FATAL. Now, if we want to log some other messages also, but dont want to turn on DEBUG or INFO because these default levels are used for much more logging than what we would want to see in **PRODUCTION**. This is the scenario which demands creation of a custom log level. 
 
 # Log4j v1.2
@@ -36,6 +37,16 @@ In production, typically we use the logging level of ERROR or FATAL. Now, if we 
         
         //Do not print this in ERROR Log level
         logger.log(Level.DEBUG, "I am a DEBUG message");	                                                                 //Line#3
+
+* There is a test class [FunnyLoggingtest.java](log4j12/src/test/java/com/mannietest/customloglevellog4j12/customloglevel/FunnyLoggingTest.java) to test this.
+
+ 
+Output would look something like this:
+
+	```
+	2018-08-22 16:20:05 FUNNY FunnyLogging:13 - I am a Funny log, because the Log level set is ERROR and my log level is FUNNY!!
+	2018-08-22 16:20:05 ERROR FunnyLogging:14 - I am an ERROR message
+	```
   
 # Log4j v2
 Log4j2 makes this even easier. Now, we don't need the class defining the custom log level. We can still do it, if we want other capabilities. For the simplest use case, we don't need it.
@@ -75,5 +86,14 @@ Log4j2 makes this even easier. Now, we don't need the class defining the custom 
         
         logger.log(Level.getLevel("ShowMeOnError"), "a ShowMeOnError Custom Level message");  //Line#6  
 
+* There is a test class [Loggingtest.java](log4j2/src/test/java/com/mannietest/customloglevellog4j2/customloglevel/LoggingTest.java) to test this.
+
+   Output would look something like this:
+    
+	```
+	[ERROR] 2018-08-22 15:00:39.449 [main] Logging - This is an error message
+	[FATAL] 2018-08-22 15:00:39.449 [main] Logging - This is a fatal message
+	[ShowMeOnError] 2018-08-22 15:00:39.449 [main] Logging - a ShowMeOnError Custom Level message
+	```
 
 Here we go with custom log levels using Log4j.
