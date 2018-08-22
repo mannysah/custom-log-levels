@@ -1,6 +1,6 @@
 # Creating Custom Log Levels using Log4j
-* [Log4j 1.2](#Log4j-1.2)
-* [Log4j 2](#Log4j-2)
+* [Log4j 1.2](#log4j-v1-2)
+* [Log4j 2](#log4j-v2)
 
 **Given** there is an application
 
@@ -14,7 +14,7 @@
 
 In production, typically we use the logging level of ERROR or FATAL. Now, if we want to log some other messages also, but dont want to turn on DEBUG or INFO because these default levels are used for much more logging than what we would want to see in **PRODUCTION**. This is the scenario which demands creation of a custom log level. 
 
-# Log4j 1.2 
+# Log4j v1.2
 * Create a Custom Log Level
     * [FunnyLogLevel.java](log4j12/src/main/java/com/mannietest/customloglevellog4j12/customloglevel/FunnyLogLevel.java)
       This class defines the custom log level with the name **FUNNY**. The log level of **FUNNY** is lesser than **ERROR** log level, so when the log level is set to ERROR this log level is covered for output. This is achieved by setting the *int* value of **FUNNY** using below code. 
@@ -37,7 +37,7 @@ In production, typically we use the logging level of ERROR or FATAL. Now, if we 
         //Do not print this in ERROR Log level
         logger.log(Level.DEBUG, "I am a DEBUG message");	                                                                 //Line#3
   
-# Log4j 2
+# Log4j v2
 Log4j2 makes this even easier. Now, we don't need the class defining the custom log level. We can still do it, if we want other capabilities. For the simplest use case, we don't need it.
 
 *For this example, we are using JSON as the log4j2 properties file. Same thing can be done using properties, XML, YAML files*
@@ -75,3 +75,5 @@ Log4j2 makes this even easier. Now, we don't need the class defining the custom 
         
         logger.log(Level.getLevel("ShowMeOnError"), "a ShowMeOnError Custom Level message");  //Line#6  
 
+
+Here we go with custom log levels using Log4j.
