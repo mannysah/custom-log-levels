@@ -15,7 +15,7 @@
 
 In production, typically we use the logging level of ERROR or FATAL. Now, if we want to log some other messages also, but dont want to turn on DEBUG or INFO because these default levels are used for much more logging than what we would want to see in **PRODUCTION**. This is the scenario which demands creation of a custom log level. 
 
-##Prerequiste
+##Prerequisite
 * Understanding of Java
 * Understanding of log4j
 * This project uses maven, but same thing can be achieved using gradle or other build tools. 
