@@ -13,7 +13,8 @@
 **Then** developers needs to create custom log level for the application 
 
 
-In production, typically we use the logging level of ERROR or FATAL. Now, if we want to log some other messages also, but dont want to turn on DEBUG or INFO because these default levels are used for much more logging than what we would want to see in **PRODUCTION**. This is the scenario which demands creation of a custom log level. 
+I have come across multiple scenarios where we need a little more logging in production where ERROR logging level is not enough. Sometimes, we need some more (very little) information on what was going on during the transaction. However, logging level INFO which is perhaps designed for higher environment than development and lower than production becomes too verbose for production.
+
 
 ## Prerequisite
 * Understanding of Java
@@ -21,7 +22,11 @@ In production, typically we use the logging level of ERROR or FATAL. Now, if we 
 * This project uses maven, but same thing can be achieved using gradle or other build tools. 
 
 ## How to test this
-Navigate the to the directory of the version you want to test and run *mvn clean test*.
+Navigate the to the directory of the version you want to test and run below maven command. 
+
+```
+mvn clean test
+```
 
 # Log4j v1.2
 * Create a Custom Log Level
