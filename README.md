@@ -68,6 +68,7 @@ Log4j2 makes this even easier. Now, we don't need the class defining the custom 
 
 * Define the custom log level in [JSON log4j2 file](log4j2/src/test/resources/log4j2.json) and the log level to be **ERROR**
 
+    ```
     ...
     "customLevels" : {
       "CustomLevel" : {
@@ -85,6 +86,7 @@ Log4j2 makes this even easier. Now, we don't need the class defining the custom 
         "appender-ref": [{"ref": "File-Appender", "level":"error"}]
       },
     ...
+    ```
 
 * Ready to log it. As done in [Logging.java](log4j2/src/main/java/com/mannietest/customloglevellog4j2/customloglevel/Logging.java).
   
