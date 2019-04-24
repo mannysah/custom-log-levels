@@ -110,3 +110,7 @@ Log4j2 makes this even easier. Now, we don't need the class defining the custom 
 	```
 
 Here we go with custom log levels using Log4j.
+
+## License
+
+MIT © Mandeep "Manny" Sah 
