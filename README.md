@@ -2,22 +2,18 @@
 * [Log4j 1.2](#log4j-v1-2)
 * [Log4j 2](#log4j-v2)
 
-**Given** there is an application
-
+**Given** there is project build using Java
 **When** the user needs to log certain statements
- 
 **And** those statements do not fall into default logging levels
- 
 **And** those statements should log at a certain level
-
 **Then** developers needs to create custom log level for the application 
 
 
-I have come across multiple scenarios where we need a little more logging in production where ERROR logging level is not enough. Sometimes, we need some more (very little) information on what was going on during the transaction. However, logging level INFO which is perhaps designed for higher environment than development and lower than production becomes too verbose for production.
+I have come across multiple scenarios where we need a little more logging in production where ERROR logging level is not appropriate. Sometimes, we need some more (very little) information on what was going on during the transaction. However, logging level INFO which is perhaps designed for higher environment than development and lower than production becomes too verbose for production.
 
 
 ## Prerequisite
-* Understanding of Java
+* Understanding of Java (Version used for this is Java 8)
 * Understanding of log4j
 * This project uses maven, but same thing can be achieved using gradle or other build tools. 
 
@@ -33,12 +29,13 @@ mvn clean test
     * [FunnyLogLevel.java](log4j12/src/main/java/com/mannietest/customloglevellog4j12/customloglevel/FunnyLogLevel.java)
       This class defines the custom log level with the name **FUNNY**. The log level of **FUNNY** is lesser than **ERROR** log level, so when the log level is set to ERROR this log level is covered for output. This is achieved by setting the *int* value of **FUNNY** using below code. 
     
-    public static final int FUNNY_INT = ERROR_INT + 10;
+  public static final int FUNNY_INT = ERROR_INT + 10;
 
 
 * [log4j.properties](log4j12/src/main/resources/log4j.properties) is set to **ERROR**
 
 	log4j.rootLogger=ERROR, FUNNY
+
  
 * We are ready to log it. In [FunnyLogging.java](log4j12/src/main/java/com/mannietest/customloglevellog4j12/customloglevel/FunnyLogging.java)
 
