@@ -63,6 +63,9 @@ Output would look something like this:
 	```
   
 # Log4j v2
+Code for this version lives in [log4j2](log4j2) folder
+
+
 Log4j2 makes this even easier. Now, we don't need the class defining the custom log level. We can still do it, if we want other capabilities. For the simplest use case, we don't need it.
 
 *For this example, we are using JSON as the log4j2 properties file. Same thing can be done using properties, XML, YAML files*
