@@ -24,7 +24,8 @@ Navigate the to the directory of the version you want to test and run below mave
 mvn clean test
 ```
 
-# Log4j v1.2
+# Log4j v1.2 
+Code for this version lives in [log4j12](log4j12) folder
 * Create a Custom Log Level
     * [FunnyLogLevel.java](log4j12/src/main/java/com/mannietest/customloglevellog4j12/customloglevel/FunnyLogLevel.java)
       This class defines the custom log level with the name **FUNNY**. The log level of **FUNNY** is lesser than **ERROR** log level, so when the log level is set to ERROR this log level is covered for output. This is achieved by setting the *int* value of **FUNNY** using below code. 
