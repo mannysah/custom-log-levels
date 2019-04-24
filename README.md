@@ -30,12 +30,14 @@ mvn clean test
       This class defines the custom log level with the name **FUNNY**. The log level of **FUNNY** is lesser than **ERROR** log level, so when the log level is set to ERROR this log level is covered for output. This is achieved by setting the *int* value of **FUNNY** using below code. 
     
       ```
-        public static final int FUNNY_INT = ERROR_INT + 10;
+      public static final int FUNNY_INT = ERROR_INT + 10;
       ```
 
 * [log4j.properties](log4j12/src/main/resources/log4j.properties) is set to **ERROR**
 
+  ```
 	log4j.rootLogger=ERROR, FUNNY
+  ```
 
  
 * We are ready to log it. In [FunnyLogging.java](log4j12/src/main/java/com/mannietest/customloglevellog4j12/customloglevel/FunnyLogging.java)
